@@ -1,0 +1,209 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #323232;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.theme-switch {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+button.zero {
+  grid-column: span 2;
+}
+
+
+.theme-light .calculator {
+  background-color: white;
+  color: black;
+}
+
+.theme-dark .calculator {
+  background-color: #505050;
+  color: white;
+}
+
+.calculator {
+  max-width: 800px;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(66, 66, 66, 0.1);
+  background-color: #f9f9f9;
+}
+
+.calculator.dark {
+  background-color: #444442;
+  color: #fff;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+  background: #444442;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  word-wrap: break-word; 
+  font-size: 2rem;
+}
+
+.display.dark {
+  background: #ddd;
+  color: #000;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(10, 2fr);
+  gap: 1.5px;
+}
+
+button {
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex: 1;
+  background-color: #565654;
+  color: #fff;
+}
+
+button.number {
+  background: #727270; /* Green for number buttons */
+  color: #fff;
+}
+
+button.operation {
+  background: #f49922; 
+  color: #fff;
+}
+
+button.number:hover, button:hover,
+button.operation:hover {
+  opacity: 0.8;
+}
+
+button.dark {
+  background: #ccc;
+  color: #383636;
+}
+
+button.dark:hover {
+  background: #fff;
+}
+
+
+.calculator-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #ec685d;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.dot.yellow {
+  background-color: #f3bd4e;
+}
+
+.dot.green {
+  background-color: #60c253;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .calculator {
+    max-width: 100%;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .buttons {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator {
+    margin: 0.5rem;
+    padding: 0.3rem;
+  }
+
+  button {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .buttons {
+    gap: 3px;
+  }
+}
+
+
+
+/* RAJEEV KUMAR 21SCSE1140001 */
